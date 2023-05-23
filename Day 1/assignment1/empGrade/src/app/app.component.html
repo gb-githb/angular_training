@@ -1,0 +1,24 @@
+<table >
+  <tr style="border: 1px solid black;">
+    <th>
+      S.No
+    </th>
+    <th>
+      Employee Name
+    </th>
+    <th>
+      Performance Grades
+    </th>
+  </tr>
+  <tr *ngFor="let empRecord of empArray" style="border: 1px solid black;">
+    <td style="border: 1px solid black;">
+      {{ empRecord.empNo}}
+    </td>
+    <td>
+      {{empRecord.empName}}
+    </td>
+    <td>
+      {{empRecord.empGrade | grade}}
+    </td>
+  </tr>
+</table>
