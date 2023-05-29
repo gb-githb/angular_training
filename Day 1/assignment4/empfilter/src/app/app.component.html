@@ -1,0 +1,37 @@
+<form>
+  <label for="property">Choose a property:</label>
+
+  <select name="property" id="property" [(ngModel)]="propertySelected">
+    <option value="empNo">Employee Number</option>
+    <option value="empName">Employee Name</option>
+  </select>
+  
+  <br><br>
+  <label for="data" >Enter a value:</label>
+  <input name="data" [(ngModel)]="propertyValue" type="text"/>
+</form>
+<hr>
+<table >
+  <tr style="border: 1px solid black;">
+    <th>
+     Employee Number
+    </th>
+    <th>
+      Employee Name
+    </th>
+    <th>
+      Performance Grades
+    </th>
+  </tr>
+  <tr *ngFor="let empRecord of empArray | filter : propertySelected : propertyValue " >
+    <td >
+      {{ empRecord.empNo}}
+    </td>
+    <td>
+      {{empRecord.empName}}
+    </td>
+    <td>
+      {{empRecord.empGrade }}
+    </td>
+  </tr>
+</table>
