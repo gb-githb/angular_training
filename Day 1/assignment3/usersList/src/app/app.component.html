@@ -1,0 +1,9 @@
+
+<!-- <app-users-list *ngFor="let user of usersArray"></app-users-list> -->
+<button (click)="onLoadMore()" *ngIf="this.noOfDisplayedUsers < this.usersArray.length ">Load More</button>
+<div class="float-container">
+  <div class="card" *ngFor="let user of usersArray | slice : 0 : this.noOfDisplayedUsers ">
+    <h4>Name : {{ user.uname }}</h4>
+    <p>Gender : {{ user.gender }}</p>
+  </div>
+</div>
